@@ -47,7 +47,7 @@ Are you sure about this answer?
 
 ${chalk.blueBright(randomNumber)}% people answered this before.
 
-Please answer ${chalk.bold('Y')} to continue and ${chalk.bold('N')} to change your choice.
+Please answer ${chalk.bold('Y')} to confirm and ${chalk.bold('N')} to change your choice.
 
 `);
 
