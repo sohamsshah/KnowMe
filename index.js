@@ -1,12 +1,12 @@
 // importings
 const chalk = require('chalk');
 const readLineSync = require('readline-sync');
-const alignText = require('align-text');
-
 
 //Global variable declaration
 const log = console.log
 let score=0
+
+
 // To greet the user
 function greeting(){
   log(chalk.yellowBright.bold.bgBlack.underline("How well do you know Soham?"));
@@ -34,6 +34,8 @@ return userName;;
 
 }
 
+// Utility functions
+
 function getColor(no){
   lis = ['red', 'green', 'yellow', 'blue','magenta','cyan','red', 'green', 'yellow', 'blue']
   return lis[(no-1)%no];
@@ -45,7 +47,7 @@ function confirmation(confirm){
   let wantToContinue = readLineSync.question(`  
 Are you sure about this answer?
 
-${chalk.blueBright(randomNumber)}% people answered this before.
+${chalk.blueBright(randomNumber)}% of Soham's friends answered this before.
 
 Please answer ${chalk.bold('Y')} to confirm and ${chalk.bold('N')} to change your choice.
 
@@ -60,6 +62,7 @@ Please answer ${chalk.bold('Y')} to confirm and ${chalk.bold('N')} to change you
   return confirm;
 }
 
+// Prints the question
 
 function quizQuestionPrint(question, no, isRepeat){
   let color = getColor(no);
@@ -92,6 +95,8 @@ function quizQuestionPrint(question, no, isRepeat){
   return res; 
   }
 
+
+// Question flow 
 
 function quizQuestionFlow(question, no){
   curr_score = quizQuestionPrint(question, no, 0);
@@ -170,6 +175,7 @@ let questions = [
   }
 ]
 
+// Driver function
 function KnowMeQuiz(){
   let userName = greeting()
   questions.forEach((question, index) => quizQuestionFlow(question,index+1));
