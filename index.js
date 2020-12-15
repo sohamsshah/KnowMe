@@ -1,6 +1,7 @@
 // importings
 const chalk = require('chalk');
 const readLineSync = require('readline-sync');
+const alignText = require('align-text');
 
 
 //Global variable declaration
@@ -34,7 +35,7 @@ return userName;;
 }
 
 function getColor(no){
-  lis = ['red', 'green', 'yellow', 'blue','magenta','cyan','redBright', 'greenBright', 'yellowBright', 'blueBright']
+  lis = ['red', 'green', 'yellow', 'blue','magenta','cyan','red', 'green', 'yellow', 'blue']
   return lis[(no-1)%no];
 }
 
@@ -77,7 +78,7 @@ function quizQuestionPrint(question, no, isRepeat){
     log(chalk.bold.red("Oops, seems an invalid choice!\n"));
     quizQuestionPrint(question, no, isRepeat);
   }
-  if(isRepeat==0){
+  if(isRepeat===0){
   res = confirmation(confirm);
   }
   else{
@@ -105,9 +106,12 @@ function goodByePrint(){
 log(`${chalk.yellow.bold(`
 ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡
 
-Liked it? Let me Know your score at:
+YOUR SCORE = ${chalk.bold.greenBright(score.toString())}
+HIGH SCORE = ${chalk.bold.greenBright('10')}
 
-Comment at: https://github.com/sohamsshah/Pottermore-CLI/issues/1
+Made a high score?
+Let me Know your score at:
+Comment at: https://github.com/sohamsshah/KnowMe/issues/1
 
 Thanks for playing! 
 `)}`)}
