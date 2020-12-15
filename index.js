@@ -44,11 +44,11 @@ function confirmation(confirm){
   let wantToContinue = readLineSync.question(`  
 Are you sure about this answer?
 
-${chalk.blue(randomNumber)}% people answered this before.
+${chalk.blueBright(randomNumber)}% people answered this before.
 
-Please answer Y to continue and N to change your choice.
+Please answer ${chalk.bold('Y')} to continue and ${chalk.bold('N')} to change your choice.
 
-  `);
+`);
 
   if ( wantToContinue === "Y"){
     confirm+=1;
@@ -81,7 +81,7 @@ function quizQuestionPrint(question, no, isRepeat){
   res = confirmation(confirm);
   }
   else{
-    res = 0;
+    res = confirm+1;
   }
   if(res=== -1){
     log(`Try another choice! \n`)
